@@ -71,5 +71,8 @@ HEALTHCHECK --interval=20s --timeout=10s --start-period=10s --retries=5 \
 # expose port for http
 EXPOSE 3468/tcp
 
+RUN chown 1001:root -R /root
+RUN chmod 775 -R /root
+
 ENTRYPOINT ["/bin/sh", "-c"]
 CMD ["/init"]
